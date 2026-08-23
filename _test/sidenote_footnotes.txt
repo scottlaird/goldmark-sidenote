@@ -1,0 +1,207 @@
+1: A footnote becomes a sidenote
+//- - - - - - - - -//
+Video is hard.[^1]
+
+[^1]: Most players can down-convert video that doesn't fit.
+//- - - - - - - - -//
+<p>Video is hard.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><span class="sidenote-wrapper"><label for="sn-0" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-0" class="margin-toggle"><span class="sidenote">Most players can down-convert video that doesn't fit.<br>
+<br>
+</span></span></p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Most players can down-convert video that doesn't fit.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+//= = = = = = = = = = = = = = = = = = = = = = = =//
+
+2: A sidenote may contain inline markup
+//- - - - - - - - -//
+Text.[^1]
+
+[^1]: *emphasis*, `code` and a [link](https://example.com/).
+//- - - - - - - - -//
+<p>Text.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><span class="sidenote-wrapper"><label for="sn-0" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-0" class="margin-toggle"><span class="sidenote"><em>emphasis</em>, <code>code</code> and a <a href="https://example.com/">link</a>.<br>
+<br>
+</span></span></p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><em>emphasis</em>, <code>code</code> and a <a href="https://example.com/">link</a>.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+//= = = = = = = = = = = = = = = = = = = = = = = =//
+
+3: Paragraphs of a definition are flattened into one sidenote
+//- - - - - - - - -//
+Text.[^1]
+
+[^1]: First paragraph.
+
+    Second paragraph.
+//- - - - - - - - -//
+<p>Text.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><span class="sidenote-wrapper"><label for="sn-0" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-0" class="margin-toggle"><span class="sidenote">First paragraph.<br>
+<br>
+Second paragraph.<br>
+<br>
+</span></span></p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>First paragraph.</p>
+<p>Second paragraph.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+//= = = = = = = = = = = = = = = = = = = = = = = =//
+
+4: A footnote referenced twice yields two sidenotes
+//- - - - - - - - -//
+A[^1] and again B[^1].
+
+[^1]: The shared note.
+//- - - - - - - - -//
+<p>A<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><span class="sidenote-wrapper"><label for="sn-0" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-0" class="margin-toggle"><span class="sidenote">The shared note.<br>
+<br>
+</span></span> and again B<sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><span class="sidenote-wrapper"><label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"><span class="sidenote">The shared note.<br>
+<br>
+</span></span>.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>The shared note.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+//= = = = = = = = = = = = = = = = = = = = = = = =//
+
+5: Notes are numbered in the order they are referenced
+//- - - - - - - - -//
+One[^b] two[^a].
+
+[^a]: The a note.
+[^b]: The b note.
+//- - - - - - - - -//
+<p>One<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><span class="sidenote-wrapper"><label for="sn-0" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-0" class="margin-toggle"><span class="sidenote">The b note.<br>
+<br>
+</span></span> two<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup><span class="sidenote-wrapper"><label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"><span class="sidenote">The a note.<br>
+<br>
+</span></span>.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>The b note.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>The a note.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+//= = = = = = = = = = = = = = = = = = = = = = = =//
+
+6: Sidenotes in a heading and a list item
+//- - - - - - - - -//
+# A heading[^1]
+
+- A list item[^2]
+
+[^1]: A note on the heading.
+[^2]: A note on the item.
+//- - - - - - - - -//
+<h1>A heading<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><span class="sidenote-wrapper"><label for="sn-0" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-0" class="margin-toggle"><span class="sidenote">A note on the heading.<br>
+<br>
+</span></span></h1>
+<ul>
+<li>A list item<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup><span class="sidenote-wrapper"><label for="sn-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="margin-toggle"><span class="sidenote">A note on the item.<br>
+<br>
+</span></span></li>
+</ul>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>A note on the heading.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>A note on the item.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+//= = = = = = = = = = = = = = = = = = = = = = = =//
+
+7: A note that refers to itself does not recurse
+//- - - - - - - - -//
+Text.[^1]
+
+[^1]: A note about [^1] itself.
+//- - - - - - - - -//
+<p>Text.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><span class="sidenote-wrapper"><label for="sn-0" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-0" class="margin-toggle"><span class="sidenote">A note about <sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> itself.<br>
+<br>
+</span></span></p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>A note about <sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> itself.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+//= = = = = = = = = = = = = = = = = = = = = = = =//
+
+8: Notes that refer to each other do not recurse
+//- - - - - - - - -//
+Text.[^a]
+
+[^a]: See [^b].
+[^b]: See [^a].
+//- - - - - - - - -//
+<p>Text.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><span class="sidenote-wrapper"><label for="sn-0" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-0" class="margin-toggle"><span class="sidenote">See <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.<br>
+<br>
+</span></span></p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>See <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>See <sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+//= = = = = = = = = = = = = = = = = = = = = = = =//
+
+9: Unreferenced definitions are dropped
+//- - - - - - - - -//
+Text.[^1]
+
+[^1]: The note.
+[^unused]: Never referenced.
+//- - - - - - - - -//
+<p>Text.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><span class="sidenote-wrapper"><label for="sn-0" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-0" class="margin-toggle"><span class="sidenote">The note.<br>
+<br>
+</span></span></p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>The note.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+//= = = = = = = = = = = = = = = = = = = = = = = =//
+
+10: A document without footnotes is untouched
+//- - - - - - - - -//
+Just a paragraph with *emphasis*.
+//- - - - - - - - -//
+<p>Just a paragraph with <em>emphasis</em>.</p>
+//= = = = = = = = = = = = = = = = = = = = = = = =//
+
