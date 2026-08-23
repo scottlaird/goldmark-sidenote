@@ -88,9 +88,21 @@ sidenote.New(sidenote.WithFootnotes())
 ```
 
 ```css
-@media (max-width: 760px) { .sidenote-wrapper { display: none } }
-@media (min-width: 761px) { .footnotes, .footnote-ref { display: none } }
+@media (max-width: 760px) {
+  .sidenote-wrapper { display: none }
+}
+@media (min-width: 761px) {
+  .footnotes,
+  .footnote-ref,
+  sup:has(> a.footnote-ref) { display: none }
+}
 ```
+
+`footnote-ref` is a class on the `a`, not on the `sup` around it, so hiding it
+alone leaves an empty `sup` behind that still takes part in layout. The third
+selector removes the whole element. Browsers without `:has()` fall back to a
+hidden `a` inside an empty `sup`, which is the old behaviour rather than a
+broken one.
 
 The contents of every note appear twice in the output in this mode, so any id
 inside a note is written twice with it. In practice this only arises when one
